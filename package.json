@@ -1,0 +1,22 @@
+{
+  "name": "storeapp",
+  "version": "1.0.0",
+  "description": "Simple monitoring of products & inventories of a store.",
+  "main": "index.js",
+  "dependencies": {
+    "electron": "^9.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/mboy1011/storeapp"
+  },
+  "keywords": [
+    "StoreApp"
+  ],
+  "author": "mboy1011",
+  "license": "ISC"
+}
