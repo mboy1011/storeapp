@@ -1,9 +1,9 @@
 @extends('layout.main')
+@section('title','Login')
 @section('content')
 <div class="container">
     <form action="#" method="POST" enctype="multipart/form-data">
-        <!-- <h3 class="header pink-text">Register<i class="material-icons medium left">person_add</i></h3> -->
-        
+        @csrf        
         <div class="input-field col s12 l6">
             <input type="email" id="em" class="validate" name="email" required>
             <label for="em">Email</label>

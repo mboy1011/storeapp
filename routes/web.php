@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Posts;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,13 @@ use App\Http\Controllers\Login;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+// Home
+Route::get('/', [Home::class, 'index']);
 // Posts 
 Route::get('/posts', [Posts::class, 'index']);
+Route::get('/posts/create', [Posts::class, 'create']);
 // Login
 Route::get('/login', [Login::class, 'index']);
