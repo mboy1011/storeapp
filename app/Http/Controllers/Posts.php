@@ -50,7 +50,20 @@ class Posts extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validate
+        $request->validate([
+            'title' =>  'required|unique:posts',
+            'body'  =>  'required'
+        ]);
+        // Create Eloqouent PHP Laravel Database
+        $posts = Post::create([
+            'title' =>  $request->input('title'),
+            'body'  =>  $request->input('body')
+        ]);
+
+        return redirect('/posts/create')->with([
+            'data'  =>  (!$posts) ? 'false' : 'true'
+        ]);
     }
 
     /**
@@ -95,6 +108,11 @@ class Posts extends Controller
      */
     public function destroy($id)
     {
-        //
+        // dd($id);
+        $posts = Post::find($id);
+        $posts->delete();
+        return redirect('/posts')->with([
+            'data'  =>  (!$posts) ? "false" : "true"
+        ]);
     }
 }

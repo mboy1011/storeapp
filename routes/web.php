@@ -21,8 +21,11 @@ use App\Http\Controllers\Home;
 // });
 // Home
 Route::get('/', [Home::class, 'index']);
+
 // Posts 
-Route::get('/posts', [Posts::class, 'index']);
-Route::get('/posts/create', [Posts::class, 'create']);
-// Login
-Route::get('/login', [Login::class, 'index']);
+Route::resource('/posts', Posts::class);
+
+// Laravel UI Vue --auth
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

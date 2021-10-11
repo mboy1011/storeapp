@@ -15,6 +15,7 @@ class Post extends Model
 
     public $timestamps = true;
 
-    public $dateFormat = 'h:m:s';
-    
+    public $dateFormat = 'Y-m-d h:m:s';
+
+    public $fillable = ['title', 'body'];
 }
