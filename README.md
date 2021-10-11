@@ -67,10 +67,19 @@
     -   Enable our newly created virtual host: <code>sudo a2ensite storeapp</code>
     -   Enable Apache's <b>rewrite</b> module: <code>sudo a2enmod rewrite</code>
     -   Restart Apache Service: <code>sudo service apache2 restart</code>
-
-
-## Using StoreApp for Local Development
-> <code>php artisan serve --host=[IP] --port=[port]</code>
+8. Create DotEnv for Laravel by copying `.env.example` to storeapp root directory: <code>cp .env.example ./.env</code>
+    ```.env
+    DB_CONNECTION=mysql
+    DB_HOST=localhost
+    DB_PORT=3306
+    DB_DATABASE=db_storeapp
+    DB_USERNAME=admin
+    DB_PASSWORD=Admin_2k21
+    ```
+9. Execute the following commands:
+    -   <code>php artisan migrate</code> to migrate all database migrations.
+    -   <code>php artisan key:generate</code> to generate an APP_KEY to `.env`
+> To Run the StoreApp Locally for development: <code>php artisan serve</code>
 
 ## About Laravel
 
