@@ -27,17 +27,27 @@
     -   Create an <b>admin</b> user to localhost/127.0.0.1 database together with the password: <code>ALTER USER 'admin'@'localhost' IDENTIFIED BY 'Admin_2k21'</code>
     -   Grant ALL permission to <b>admin</b> user: <code>GRANT ALL ON *.* TO 'admin'@'localhost';</code>
     -   Save changes to database without reloading or restart mysql service: <code>FLUSH PRIVILEGES;</code>
-4. Install Composer PHP Dependency Manager
+4. Install Composer for Laravels' PHP Dependency Manager 
     -   <code>curl -sS https://getcomposer.org/installer | php</code>
     -   <code>sudo mv composer.phar /usr/local/bin/composer</code>
     -   <code>sudo chmod +x /usr/local/bin/composer</code>
-5. Clone StoreApp then move to Apache web root
-    -   <code>git clone https://github.com/mboy1011/storeapp</code>
-    -   <code>sudo mv storeapp /var/www/html/</code>
+5. Install NodeJS & NPM for Laravels' NODE Package Manger
+    -   <code>sudo apt install npm -y</code>
+    -   Update NPM: <code>sudo npm install -g npm</code>
+    -   Install NodeJS-LTS:
+        -   <code>sudo npm install -g n</code>
+        -   <code>sudo n lts</code>
+6. Clone StoreApp Repository and Install PHP and NPM dependencies then move to Apache web root
+    -   Open terminal and type: <code>git clone https://github.com/mboy1011/storeapp</code>
+    -   Install PHP Dependencies using Composer:
+        -   <code>composer update</code>
+    -   Install NPM Dependencies using `npm` command:
+        -   <code>npm install</code>
+    -   Move the `storeapp` directory:<code>sudo mv storeapp /var/www/html/</code>
     -   Change the permission to apache's web server user 
         -   <code>sudo chgrp -R www-data /var/www/html/storeapp/</code>
         -   <code>sudo chmod -R 775 /var/www/html/storeapp/storage</code>
-6. Create a new Virtual Host for StoreApp:
+7. Create a new Virtual Host for StoreApp:
     -   Go to <b>site-available</b> directory: <code>cd /etc/apache2/sites-available</code>
     -   Create a <b><i>storeapp.conf</i></b>: <code>sudo vim storeapp.conf</code>
     -   Add the following code to `storeapp.conf`:
