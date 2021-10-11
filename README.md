@@ -40,20 +40,19 @@
 6. Create a new Virtual Host for StoreApp:
     -   Go to <b>site-available</b> directory: <code>cd /etc/apache2/sites-available</code>
     -   Create a <b><i>storeapp.conf</i></b>: <code>sudo vim storeapp.conf</code>
-    -   Add the following code to <b><i>storeapp.conf</i></b>:
-        <code>
-            <VirtualHost *:80>
-                ServerName 172.31.208.196
-                ServerAdmin webmaster@172.31.208.196
-                DocumentRoot /var/www/html/storeapp/public
-
-                <Directory /var/www/html/storeapp>
-                    AllowOverride All
-                </Directory>
-                ErrorLog ${APACHE_LOG_DIR}/error.log
-                CustomLog ${APACHE_LOG_DIR}/access.log combined
-            </VirtualHost>
-        </code>
+    -   Add the following code to `storeapp.conf`:
+    ```apache
+        <VirtualHost *:80>
+            ServerName 172.31.208.196
+            ServerAdmin webmaster@172.31.208.196
+            DocumentRoot /var/www/html/storeapp/public
+            <Directory /var/www/html/storeapp>
+                AllowOverride All
+            </Directory>
+            ErrorLog ${APACHE_LOG_DIR}/error.log
+            CustomLog ${APACHE_LOG_DIR}/access.log combined
+        </VirtualHost>
+    ```
     -   Disable default config file for virtual host: <code>sudo a2dissite 000-default.conf</code>
     -   Enable our newly created virtual host: <code>sudo a2ensite storeapp</code>
     -   Enable Apache's <b>rewrite</b> module: <code>sudo a2enmod rewrite</code>
