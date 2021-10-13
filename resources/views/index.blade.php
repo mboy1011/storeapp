@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('m_layout.main')
 @section('title','Home')
 @section('content')
 <div class="carousel">

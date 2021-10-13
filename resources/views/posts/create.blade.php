@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('m_layout.main')
 @section('title','Create Posts')
 @section('content')
 <div class="container">
